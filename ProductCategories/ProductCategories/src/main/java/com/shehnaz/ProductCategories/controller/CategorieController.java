@@ -1,5 +1,6 @@
 package com.shehnaz.ProductCategories.controller;
 
+import com.shehnaz.ProductCategories.Exception.CategoryAlreadyExistException;
 import com.shehnaz.ProductCategories.dto.CategorieDTO;
 import com.shehnaz.ProductCategories.service.CategorieService;
 import lombok.AllArgsConstructor;
@@ -24,9 +25,9 @@ public class CategorieController {
     }
 
     @PostMapping
-    public ResponseEntity<CategorieDTO> createCategory(@RequestBody CategorieDTO categorieDTO){
-
-        return new ResponseEntity<>(categorieService.createCategory(categorieDTO), HttpStatus.CREATED);
+    public ResponseEntity<?> createCategory(@RequestBody CategorieDTO categorieDTO){
+            CategorieDTO saveCategory=categorieService.createCategory(categorieDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body(saveCategory);
     }
 
     @GetMapping("/{id}")

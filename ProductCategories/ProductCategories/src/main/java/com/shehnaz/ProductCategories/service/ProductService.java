@@ -1,6 +1,7 @@
 package com.shehnaz.ProductCategories.service;
 
 
+import com.shehnaz.ProductCategories.Exception.CategoryNotFoundException;
 import com.shehnaz.ProductCategories.dto.ProductDTO;
 import com.shehnaz.ProductCategories.entity.CategorieEntity;
 import com.shehnaz.ProductCategories.entity.ProductEntity;
@@ -31,7 +32,7 @@ public class ProductService {
         return ProductMapper.toproductDTO(productEntity);
     }
     public ProductDTO createProduct(ProductDTO productDTO){
-       CategorieEntity categorie= categorieRepository.findById(productDTO.getCategoryId()).orElseThrow(()-> new RuntimeException("Category not Found"));
+       CategorieEntity categorie= categorieRepository.findById(productDTO.getCategoryId()).orElseThrow(()-> new CategoryNotFoundException("Category id"+productDTO.getCategoryId()+"not Found"));
         ProductEntity productEntity=ProductMapper.toProductEntity(productDTO,categorie);
         productEntity=productRepository.save(productEntity);
         // Return Entity to DTO
