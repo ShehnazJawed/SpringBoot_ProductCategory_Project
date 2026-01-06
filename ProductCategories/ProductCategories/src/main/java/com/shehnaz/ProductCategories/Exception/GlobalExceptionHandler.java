@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
                 ex.getMessage(),
                 LocalDateTime.now()
         );
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionResponseDTO;
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionResponseDTO);
     }
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionResponseDTO> handleGlobalException(Exception ex, WebRequest webRequest){
@@ -41,7 +41,7 @@ public class GlobalExceptionHandler {
                 ex.getMessage(),
                 LocalDateTime.now()
         );
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exceptionResponseDTO;
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(exceptionResponseDTO);
     }
 
 }
