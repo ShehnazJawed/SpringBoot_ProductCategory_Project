@@ -3,6 +3,10 @@ package com.shehnaz.ProductCategories.dto;
 
 import lombok.*;
 
+//@Schema(
+//        name= "Product",
+//        description= "It's Hold Product description",
+//)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

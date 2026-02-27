@@ -4,6 +4,10 @@ import com.shehnaz.ProductCategories.entity.ProductEntity;
 import lombok.*;
 
 import java.util.List;
+//@Schema(
+//        name= "Category",
+//        description= "It's Hold category description with thier products",
+//)
 
 @Data
 @Getter

@@ -24,6 +24,15 @@ public class CategorieController {
              return categorieService.getAllCateqorie();
     }
 
+//    @Operation(
+//          summary="Create Category"
+//          description= "REST API to Create Category"
+//    )
+//    @ApiRespnse(
+//            responseCode="201",
+//              description="rest api TO UPDATE pRODUCT BY pRODUCT id."
+//    )
+
     @PostMapping
     public ResponseEntity<?> createCategory(@RequestBody CategorieDTO categorieDTO){
             CategorieDTO saveCategory=categorieService.createCategory(categorieDTO);
